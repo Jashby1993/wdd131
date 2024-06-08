@@ -1,40 +1,61 @@
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Poppins&family=Ysabeau:ital,wght@0,1..1000;1,1..1000&display=swap');
-
-
+*{
+  margin:0;
+}
 
 main {
-    display:grid;
-    height:100vh;
-    grid-template: auto 1fr auto / 2fr auto;
-    background-color: #bbc5c9;
+     display: grid;
+    grid-template-columns: 2fr 1fr;
+    
+    height:100vh; 
+    background-color: #DCEDC8;
     font-family: "M PLUS Rounded 1c", Georgia, Times, 'Times New Roman', serif;
 }
 
 h1,h2,h3,h4,h5,h6{
     font-family: "Poppins", helvetica, sans-serif;
 }
+.nav-bar{
+  background-color: #7CB342;   
+  display: flex;
+  justify-content: space-around;
+  font-size:1.05em;
+  padding:.4em;
+}
 
 nav a{
+    
     text-decoration: none;
     color: #F6F6F8;
     font-family: "M PLUS Rounded 1c", Georgia, Times, 'Times New Roman', serif;
-}
-
-nav{
-    background-color: #6E2020;
-    
-    display: flexbox;
-    
+  display:flex;
 }
 
 header,footer{
-    background-color: #2e4052;
+    margin: 0;
+    background-color: #33691E;
     color: #F3EFF5;
     font-family: "Ysabeau", Georgia, 'Times New Roman', Times, serif;
+  text-align: center;
+  align-items: center;
+}
+header{
+  margin:0;
+  font-size:1.5em;
 }
 
-
-
 aside{
-    background-color: #e8ccbf;;
+    background-color: #C5E1A5;
+  font-family: "M PLUS Rounded 1c", Georgia, Times, 'Times New Roman', serif;
+  font-size:1.2em;
+  text-align:center;
+  
+}
+footer {
+  font-size:1.3em;
+}
+.main-body{
+  display:grid;
+  grid-template-rows:1fr,1fr,1fr;
+  justify-content:space-around;
 }
