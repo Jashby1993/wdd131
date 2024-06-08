@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Poppins&family=Ysabeau:ital,wght@0,1..1000;1,1..1000&display=swap');
+*{
+    margin:0;
+}
+header,footer{
+    margin: 0;
+    background-color: #33691E;
+    color: #F3EFF5;
+    font-family: "Ysabeau", Georgia, 'Times New Roman', Times, serif;
+  text-align: center;
+  align-items: center;
+}
+#namesticker {
+    font-size: .85em;
+    color:bisque;
+}
+
+nav{
+    display:flex;
+    justify-content: space-around;
+    background-color:darkslategrey;
+}
+
+nav a{
+    text-decoration:none;
+    color:azure;
+}
+main {
+    display: grid;
+   grid-template-columns: 1fr 1fr;
+   
+   height:100vh; 
+   background-color: #DCEDC8;
+   font-family: "M PLUS Rounded 1c", Georgia, Times, 'Times New Roman', serif;
+}
+
+.card {
+    display: flex;
+}
