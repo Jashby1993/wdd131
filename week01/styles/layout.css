@@ -46,6 +46,7 @@ header{
 
 aside{
     background-color: #C5E1A5;
+    color:black;
   font-family: "M PLUS Rounded 1c", Georgia, Times, 'Times New Roman', serif;
   font-size:1.2em;
   text-align:center;
@@ -56,6 +57,6 @@ footer {
 }
 .main-body{
   display:grid;
-  grid-template-rows:1fr,1fr,1fr;
+  grid-template-rows:1fr 1fr 1fr;
   justify-content:space-around;
 }
