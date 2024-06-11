@@ -1,39 +1,148 @@
-@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Poppins&family=Ysabeau:ital,wght@0,1..1000;1,1..1000&display=swap');
-*{
-    margin:0;
-}
-header,footer{
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+header, footer {
     background-color: #33691E;
     color: #F3EFF5;
     font-family: "Ysabeau", Georgia, 'Times New Roman', Times, serif;
-  text-align: center;
-  align-items: center;
+    text-align: center;
+    padding: 1em;
 }
+
 #namesticker {
-    font-size: .85em;
-    color:bisque;
+    font-size: 0.85em;
+    color: bisque;
 }
 
-nav{
-    display:flex;
+nav {
+    display: flex;
     justify-content: space-around;
-    background-color:darkslategrey;
+    background-color: darkslategrey;
+    font-size: 1.4em;
+    padding: 0.5em 0;
 }
 
-nav a{
-    text-decoration:none;
-    color:azure;
+nav a {
+    text-decoration: none;
+    color: azure;
+    transition: transform 0.5s ease;
 }
+
+nav a:hover {
+    transform: scale(1.05) rotate(10deg);
+}
+
 main {
     display: grid;
-   grid-template-columns: 1fr 1fr;
-   
-   height:100vh; 
-   background-color: #DCEDC8;
-   font-family: "M PLUS Rounded 1c", Georgia, Times, 'Times New Roman', serif;
+    grid-template-columns: 1fr 1fr;
+    gap: 2%;
+    padding: 1em;
+    background-color: #DCEDC8;
+    min-height: calc(100vh - 2em - 4em); /* Adjusting for header and footer height */
 }
 
 .card {
-    display: flex;
+    background-color: #E3F2E6;
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    overflow: hidden;
 }
+
+.about-me {
+    grid-column: 1 / 2;
+}
+
+.me-paragraph {
+    position: relative;
+    padding: 1em;
+    overflow: hidden; /* Ensure it contains floated content */
+}
+
+.me-paragraph img {
+    float: left;
+    margin: 0 .8em .3em 0;
+    max-width: 30%;
+    height: auto;
+}
+
+.me-paragraph p {
+    text-align: justify;
+}
+
+.fort-wayne {
+    position: relative;
+    padding: 1em;
+    overflow: hidden; /* Ensure it contains floated content */
+}
+
+.fort-wayne img {
+    float: right;
+    margin: 0 0 .3em .8em;
+    max-width: 30%;
+    height: auto;
+}
+
+.fort-wayne p {
+    text-align: justify;
+}
+
+footer {
+    clear: both;
+    padding: 1em;
+    background-color: #33691E;
+    color: #F3EFF5;
+    text-align: center;
+    position: relative;
+    z-index: 10; /* Ensure footer stays above other content */
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Additional styles for better visual clarity */
+h2, h3, h4 {
+    text-align: center;
+    margin-bottom: 0.5em;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    padding: 0.5em 0;
+}
+
+a {
+    text-decoration: none;
+    font-size: 1.4em;
+    text-align: justify;
+}
+
+.card a {
+    text-decoration: none;
+    font-size: 1.4em;
+    text-align: justify;
+    display: inline-block; 
+    transition: transform 0.5s ease;
+    color:black;
+    
+}
+.card a:hover {
+    
+        transform: scale(1.05) rotate(10deg);
+    
+}
+
