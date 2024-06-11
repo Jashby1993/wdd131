@@ -1,36 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Poppins&family=Ysabeau:ital,wght@0,1..1000;1,1..1000&display=swap');
 *{
-  margin:0;
+    margin:0;
 }
-
-main {
-     display: grid;
-    grid-template-columns: 2fr 1fr;
-    
-    height:100vh; 
-    background-color: #DCEDC8;
-    font-family: "M PLUS Rounded 1c", Georgia, Times, 'Times New Roman', serif;
-}
-
-h1,h2,h3,h4,h5,h6{
-    font-family: "Poppins", helvetica, sans-serif;
-}
-.nav-bar{
-  background-color: #7CB342;   
-  display: flex;
-  justify-content: space-around;
-  font-size:1.05em;
-  padding:.4em;
-}
-
-nav a{
-    
-    text-decoration: none;
-    color: #F6F6F8;
-    font-family: "M PLUS Rounded 1c", Georgia, Times, 'Times New Roman', serif;
-  display:flex;
-}
-
 header,footer{
     margin: 0;
     background-color: #33691E;
@@ -39,24 +10,83 @@ header,footer{
   text-align: center;
   align-items: center;
 }
-header{
-  margin:0;
-  font-size:1.5em;
+#namesticker {
+    font-size: .85em;
+    color:bisque;
 }
 
-aside{
-    background-color: #C5E1A5;
-    color:black;
-  font-family: "M PLUS Rounded 1c", Georgia, Times, 'Times New Roman', serif;
-  font-size:1.2em;
-  text-align:center;
+nav{
+    display:flex;
+    justify-content: space-around;
+    background-color:darkslategrey;
+    font-size:1.4em;
+}
+
+nav a{
+    text-decoration:none;
+    color:azure;
+}
+a {display: inline-block; 
+    transition: transform 0.5s ease; 
+}
+a:hover {
+  transform: scale(1.05) rotate(10deg);
+}
+main {
+    display: grid;
+   grid-template-columns: 1fr 1fr;
+   
+   height:100vh; 
+   background-color: #DCEDC8;
+   font-family: "M PLUS Rounded 1c", Georgia, Times, 'Times New Roman', serif;
+}
+aside.card{
+  grid-column:2/3;
+}
+
+.card {
+    display: grid;
+    background-color:#E3F2E6;
+    padding:1em;
+    margin:3%;
+  border-radius:10px;
+  box-sizing: border-box;
+}
+.about-me{
+  grid-column:1/2;
+}
+.me-paragraph{
+  position:relative;
+  padding:1em;
+}
+.me-paragraph img{
+  float:left;
+   margin: 0 0 .8em .8em;
+  max-width:30%;
+  height: auto;
+}
+.me-paragraph p{
+  text-align:justify;
+}
+.fort-wayne{
+  position: relative;
+  padding:1em;
   
 }
-footer {
-  font-size:1.3em;
+.fort-wayne img{
+  float:right;
+  margin: 0 0 .8em .8em;
+  max-width:30%;
+  height: auto;
 }
-.main-body{
-  display:grid;
-  grid-template-rows:1fr 1fr 1fr;
-  justify-content:space-around;
+.fort-wayne p{
+  text-align:justify;
+}
+.card h2,
+.card h3{
+  text-align:center;
+  border-bottom: 2px solid black;
+      margin-bottom: 0.5em;
+    padding-bottom: 0.1em; 
+    line-height: 1.2; 
 }
