@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&family=Mate:ital@0;1&display=swap');
+
+body {
+    font-family: "Golos Text";
+    background-color: #82D9B3;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: "Mate";
+    text-align: center;
+}
+
+header, footer {
+    background-color: #1F4F6F;
+    color:aliceblue;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.special-meaning p {
+    font-size:0.7em;
+    font-style:italic;
+}
+
+.temple-figures{
+    background-color: #94F0A9;
+    display: flex;
+    flex-direction: column;
+}
+
+figure {
+    background-color: #DAFBDE;
+    align-items: center;
+    justify-content: center;
+}
+
+figure img{
+    border-radius: .5em;
+    padding: 1em;
+}
+
+figcaption{
+    text-align: center;
+}
