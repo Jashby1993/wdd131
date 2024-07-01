@@ -1,47 +1,108 @@
+/* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&family=Mate:ital@0;1&display=swap');
 
+/* Common Styles */
 body {
     font-family: "Golos Text";
     background-color: #82D9B3;
+    margin: 0;
+    padding: 0;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1, h2, h3, h4, h5, h6 {
     font-family: "Mate";
     text-align: center;
 }
 
 header, footer {
     background-color: #1F4F6F;
-    color:aliceblue;
+    color: aliceblue;
 }
 
 a {
     text-decoration: none;
     color: inherit;
+    display: inline-block;
+    transition: transform 0.5s ease-in-out;
 }
 
-.special-meaning p {
-    font-size:0.7em;
-    font-style:italic;
+a:hover {
+    transform: scale(1.05) rotate(10deg);
 }
 
-.temple-figures{
+/* Navigation Styles */
+nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+nav a {
+    padding: 0.3em;
+    width: 100%; /* Ensure full-width for each link */
+    text-align: center;
+    background-color: #1F4F6F; /* Background for visual separation */
+    color: aliceblue;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Hidden and Show Classes */
+.hidden {
+    display: none;
+}
+
+.show {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Figure Styles */
+.temple-figures {
     background-color: #94F0A9;
     display: flex;
     flex-direction: column;
 }
 
 figure {
+    max-width: 80vw;
+    display: flex;
+    flex-direction: column;
     background-color: #DAFBDE;
     align-items: center;
     justify-content: center;
 }
 
-figure img{
-    border-radius: .5em;
+figure img {
+    width: fit-content;
+    height: auto;
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 1.5em;
     padding: 1em;
 }
 
-figcaption{
+figcaption {
     text-align: center;
+    padding-bottom: 0.5em;
+}
+
+.special-meaning p {
+    font-size: 0.7em;
+    font-style: italic;
+}
+
+/* Additional Styles */
+.hamburger {
+    font-size: 2em; /* Adjust icon size */
+    background: none;
+    border: none;
+    color: aliceblue;
+    cursor: pointer;
+}
+
+.hidden { /* Ensure the hidden class is properly hiding elements */
+    display: none !important; /* Add !important to ensure it overrides other styles */
 }
