@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400;1,700&family=Nerko+One&display=swap');
+
+:root{
+    --primary-color: #009739;
+    --secondary-color: #012169;
+    --tertiary-color: #fedd00;
+    --text-pop-color: white;
+    --heading-font: "Nerko One", Georgia, Monteci;
+    --paragraph-font: "Carlito", "Sans Serif", Arial;
+}
+
+header, footer {
+    background-color: var(--primary-color);
+    color: var(--text-pop-color);
+    text-align: center;
+}
+
+main{
+    background-color: var(--tertiary-color)
+}
+/* widgets: transparent --tertiary background, --secondary header space, white font
+*/
