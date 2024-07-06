@@ -7,8 +7,14 @@
     --text-pop-color: white;
     --heading-font: "Nerko One", Georgia, Monteci;
     --paragraph-font: "Carlito", "Sans Serif", Arial;
+    --infographic-background-transparent: rgba(255,241,128,.5);
+    
+    }
+body{
+    padding:0;
+    margin:0;
+    background-color: var(--tertiary-color);
 }
-
 header, footer {
     background-color: var(--primary-color);
     color: var(--text-pop-color);
@@ -16,7 +22,57 @@ header, footer {
 }
 
 main{
-    background-color: var(--tertiary-color)
+    
+    display:flex;
+    flex-direction: column;
+    justify-items:center;
+    align-items: center;
+    
 }
-/* widgets: transparent --tertiary background, --secondary header space, white font
+
+img{
+    max-width: 85vw;
+    height: auto;
+}
+
+/* infographics: transparent --tertiary background, --secondary header space, white font
 */
+.infographic{
+    max-width: 85vw;
+    
+    margin:1em auto;
+    
+    display:flex;
+    flex-direction:column;
+    background-color: rgb(254, 255, 232);
+    font-size:large;
+    align-items:center;
+}
+
+.infographic h3{
+    background-color: var(--secondary-color);
+    width:100%;
+    color:aliceblue; 
+    padding:.5em;
+    text-align: center;
+    font-size: 1.3em;
+
+}
+
+#weather-icon{
+    max-width: 30vw;
+    height:auto;
+}
+table{
+    width:100%;
+}
+
+td{
+    font-size: .9em;
+}
+
+.label{
+    font-weight:bold;
+    text-align: right;
+    
+}

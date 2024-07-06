@@ -17,34 +17,72 @@
     <main>
         <div class="hero-image">
             <picture>
-                <source srcset="images/place/brazil-flag-169.webp" media="min-width: 1000px">
-                <source srcset="images/place/onca-pintada.webp" media="min-width: 550px">
+                <source srcset="images/place/brazil-flag-reformatted.webp" media="(min-width: 1000px)" alt="Waving Brazilian Flag">
+                <source srcset="images/place/onca-pintada.webp" media="(min-width: 550px)" alt="Spotted Jaguar">
                 <img src="images/place/blue-and-yellow-mccaw.webp" alt="Blue and Yellow Mccaw">
               </picture>
             <div class="hero-content">
                 
-                <div class="data">
+                <div class="infographic">
                     <h3>DATA</h3>
-                    <ul>
-                        <li>Area: #</li>
-                        <li>Population: </li>
-                        <li>Capital: </li>
-                        <li>Official Language: </li>
-                        <li>Currentcy: Brazilian Real</li>
-                        <li>TIme Zone: </li>
-                        <li>Calling Code: </li>
-                        <li>INternet TLD: </li>
-                    </ul>
 
-                </div>
-                <div class = "weather">
+                    <table>
+                        <tr>
+                            <td class="label">Area: </td>
+                            <td class="value">8,515,767 square km</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Population: </td>
+                            <td class="value">215.3 million</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Capital: </td>
+                            <td class="value">Brasilia, Federal District</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Official Language: </td>
+                            <td class="value">Portuguese</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Currency: </td>
+                            <td class="value">Brazilian Real</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Time Zone: </td>
+                            <td class="value">Brasilia Standard Time (GMT-3)</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Calling Code: </td>
+                            <td class="value">#55</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Internet TLD: </td>
+                            <td class="value">.br</td>
+                        </tr>
+                    </table>
+                 </div>
+                <div class = "infographic">
                     <h3> WEATHER</h3>
-                    <ul>
-                        <li>Temperature:</li>
-                        <li>COnditions: </li>
-                        <li>Wind: </li>
-                        <li>Wind Chill: </li>
-                    </ul>
+                    <img src="images/place/sunny-skies-icon.svg" id = "weather-icon">
+                    <table>
+                        <tr>
+                            <td class="label">Temperature: </td>
+                            <td class="value">32°C</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Conditions: </td>
+                            <td class="value">Sunny Skies</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Wind: </td>
+                            <td class="value">5 km/h</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Wind Chill: </td>
+                            <td class="value" id="windchill"></td>
+                        </tr>
+                    </table>
+
                 </div>
 
                 </div>
@@ -53,7 +91,8 @@
 
     </main>
     <footer>
-
+        <p>©<span id="year"></span>😎Justin Ashby 😎Orem,Utah😎</p>
+        <p>Last modified:<span id="lastModified"></span></p>
     </footer>   
 </body>
 </html>
