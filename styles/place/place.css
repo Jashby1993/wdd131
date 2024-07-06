@@ -7,8 +7,7 @@
     --text-pop-color: white;
     --heading-font: "Nerko One", Georgia, Monteci;
     --paragraph-font: "Carlito", "Sans Serif", Arial;
-    --infographic-background-transparent: rgba(24, 238, 106, 0.722);
-    
+    --infographic-background-transparent: rgba(24, 238, 106, 0.722);    
     }
 body{
     padding:0;
@@ -21,13 +20,11 @@ header, footer {
     text-align: center;
 }
 
-main{
-    
+main{    
     display:flex;
     flex-direction: column;
     justify-items:center;
-    align-items: center;
-    
+    align-items: center;    
 }
 
 img{
@@ -35,13 +32,10 @@ img{
     height: auto;
 }
 
-/* infographics: transparent --tertiary background, --secondary header space, white font
-*/
+
 .infographic{
-    max-width: 85vw;
-    
-    margin:1em auto;
-    
+    max-width: 85vw;    
+    margin:1em auto;    
     display:flex;
     flex-direction:column;
     background-color: rgb(254, 255, 232);
@@ -56,7 +50,6 @@ img{
     padding:.5em;
     text-align: center;
     font-size: 1.3em;
-
 }
 
 #weather-icon{
@@ -73,6 +66,73 @@ td{
 
 .label{
     font-weight:bold;
-    text-align: right;
+    text-align: right;    
+}
+@media screen and (min-width:1000px){
+    body, html {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+    }
+
+    main{
+        margin:0;
+        padding:0;
+        display:grid;
+        grid-template-columns: 1fr 2fr 1fr;
+    }
+    img{
+        max-width: 100%;
+    }
+    .infographic h3{
+        background-color: var(--tertiary-color);
+        width:100%;
+        color:var(--secondary-color); 
+        padding:.5em;
+        text-align: center;
+        font-size: 1.3em;
+    
+    }
+
+    .hero {
+        box-sizing: border-box;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        display:grid;
+        position:relative;
+    }
+    
+    .hero picture {
+        grid-column:1 / 4;
+        display: block;   
+        width: 100%;
+        height: 100%;
+    }
+    #weather-icon{
+        width:5em;
+        height:auto;
+    }
+    
+    .hero img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+   .infographic{
+        position:absolute;
+        z-index:1;
+        background-color: var(--infographic-background-transparent);
+    }
+    #weather{
+        grid-column:3/4;
+        align-self:flex-end;
+    }
     
 }
