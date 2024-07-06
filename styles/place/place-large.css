@@ -6,19 +6,66 @@
         height: 100%;
         overflow-x: hidden; /* Optional: Prevent horizontal scrolling */
     }
-    .hero-image {
+
+    main{
+        margin:0;
+        padding:0;
+        display:grid;
+        grid-template-columns: 1fr 2fr 1fr;
+    }
+    img{
+        max-width: 100%;
+    }
+    .infographic h3{
+        background-color: var(--tertiary-color);
+        width:100%;
+        color:var(--secondary-color); 
+        padding:.5em;
+        text-align: center;
+        font-size: 1.3em;
+    
+    }
+
+    .hero {
+        box-sizing: border-box;
         width: 100vw; /* Full viewport width */
         height: 100vh; /* Full viewport height */
         overflow: hidden; /* Prevents overflow and ensures the image fits exactly */
         margin: 0; /* Ensure no margin */
         padding: 0; /* Ensure no padding */
+        display:grid;
+ /*       grid-template-columns: 1fr 2fr 1fr;*/
+        position:relative;
+        
     }
     
-    .hero-image img {
+    .hero picture {
+        grid-column:1 / 4;
+        display: block;   
+        width: 100%;
+        height: 100%;
+    }
+    #weather-icon{
+        width:5em;
+        height:auto;
+    }
+    
+    .hero img {
+        
         width: 100%; /* Make the image fill the entire width of its container */
         height: 100%; /* Make the image fill the entire height of its container */
         object-fit: cover; /* Ensures the image covers the entire container, maintaining aspect ratio */
         display: block; /* Ensures the image behaves as a block element */
     }
 
+   .infographic{
+        position:absolute;
+        z-index:1;
+        background-color: var(--infographic-background-transparent);
+    }
+    #weather{
+        grid-column:3/4;
+        align-self:flex-end;
+    }
+    
 }
