@@ -3,37 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content = "temples-info">
-    <meta name="author" content = "Justin Ashby">
+    <meta name="description" content="temples-info">
+    <meta name="author" content="Justin Ashby">
     <title>WDD131 Temples</title>
-    <link rel="stylesheet" href="styles/temples.css">
-    <link rel="stylesheet" href="styles/temples-large.css">
-    <script src="scripts/temples.js" defer></script>  
+    <link rel="stylesheet" href="styles/filtered-temples/filtered-temples.css">
+    <link rel="stylesheet" href="styles/filtered-temples/filtered-temples-large.css">
+    <script src="scripts/filtered-temples.js" defer></script>  
 </head>
 <body>
     <header>
         <h1>LDS Temple Info</h1>
         <button id="hamburger" class="hamburger">☰</button>
         <nav>
-            
-            <a href="#">HOME</a>
-            <a href="#">OLD</a>
-            <a href="#">NEW</a>
-            <a href="#">LARGE</a>
-            <a href="#">SMALL</a>
+            <a href="#" id="home-link">HOME</a>
+            <a href="#" id="old-link">OLD</a>
+            <a href="#" id="new-link">NEW</a>
+            <a href="#" id="large-link">LARGE</a>
+            <a href="#" id="small-link">SMALL</a>
         </nav>
     </header>
-    <body>
-        <main>
-            <h2>Home</h2>
-        <div class = "temple-figures">
-            
-
-        </div>
+    <main>
+        
+        <div id="temple-figures"></div>
     </main>
-    </body>
     <footer>
-        <p>©<span id="year"></span>😎Justin Ashby 😎Orem,Utah😎</p>
+        <p>©<span id="year"></span>😎Justin Ashby 😎Orem, Utah😎</p>
         <p>Last modified:<span id="lastModified"></span></p>
     </footer>
 </body>
