@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1&family=Quintessential&display=swap');
+
+:root{
+    --text-color: #0A171F;
+    --accent: #4398C7;
+    --call-to-action:#E29D3C;
+    --relief:#F0F6FA;
+    --primary:#AFBCC4;
+    --headers:"Quintessential", Georgia, "Times New Roman";
+    --paragraph:"Gothic A1", "Arial";
+}
+header{
+    background-color:var(--primary);
+    border-bottom:solid .2em var(--call-to-action);
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: var(--headers);
+}
+p{
+    font-family: var(--paragraph);
+}
+h1, h2, h3, h4, p{
+color:var(--text-color);
+border:solid .5em var(--accent);
+}
+main{
+    background-color: var(--relief);
+}
+
