@@ -2,17 +2,30 @@
 body{
     margin:0;
     padding:0;
+    background-color: #AEC3B0;
+    font-family: Verdana, sans-serif;
 }
 header, footer{
     background-color: #124559;
     color:aliceblue;
     text-align: center;
+    width:100%;
+    max-width: 500px;
+    text-align: center;
+    margin:0 auto;
 }
 
 form{
     width:100%;
     max-width: 500px;
     margin:2rem auto;
+    background-color: #EFF6E0;
+    border:solid 2px #598392;
+    border-radius:6px;
+}
+.review legend{
+    text-align: center;
+    font-size: 1.2rem;
 }
 
 .review fieldset{
@@ -23,12 +36,18 @@ form{
     border-radius:6px;
     padding:.5rem 2%;
     width:100%;
-    max-width: 400px;
+    max-width: 500px;
 }
 
 .review label{
     display:block;
     padding-top:.5rem;
+    margin-bottom:.1rem;
+}
+
+.review div{
+    font-size: .8rem;
+    margin-bottom:.5rem;
 }
 
 .review input[type="text"],
@@ -41,11 +60,22 @@ form{
     width:100%;
     max-width: 400px;
 }
-.review:required{
-    border:solid 2px red;
+input:required{
+    border-bottom:solid 8px red;
 }
-.review:required:valid{
-    border:solid 2px green;
+input:required:valid{
+    border-bottom:solid 8px green;
+}
+input[type="submit"]{
+    width:96%;
+    max-width: 440px;
+    background-image: linear-gradient(#124559,#598392);
+    color:#EFF6E0;
+    border-radius: 10px;
+    padding:.8rem;
+    font-size:1.2rem;
+    font-weight: 200;
+    margin:.5rem 2% .5rem 2%;
 }
 
 /* stars */
