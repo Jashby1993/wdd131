@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Form Page</title>
     <link href="styles/form.css" rel="stylesheet">
     <script src="scripts/form.js" defer></script>
 </head>
 <body>
     <header><h1>Product Review</h1></header>
-    <form method = "get" action = "review.html">
+    <form method = "get" action = "review.html" onsubmit="entryCounter()">
         <fieldset  class="review">
             <legend>Tell Us What You Think!</legend>
         <label>Product Name*
-            <select name="product" required>
+            <select name="product" required id="product">
                 <option value="" selected disabled>Please select an option...</option>
 
             </select>
@@ -44,6 +44,7 @@
     <input type="submit" value="PUBLISH REVIEW">
 </form>
 <footer>
+    
     <p>©<span id="year"></span>😎Justin Ashby 😎Orem,Utah😎</p>
     <p>Last modified:<span id="lastModified"></span></p>
 </footer>

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Gothic+A1&family=Quintessential&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&family=Baskervville+SC&family=Cinzel+Decorative:wght@400;700&display=swap');
 
 :root{
     --text-color: #0A171F;
@@ -6,6 +6,7 @@
     --call-to-action:#E29D3C;
     --relief:#F0F6FA;
     --primary:#AFBCC4;
+    --branding:"Cinzel Decorative";
     --headers:"Quintessential", Georgia, "Times New Roman";
     --paragraph:"Gothic A1", "Arial";
 }
@@ -13,7 +14,10 @@ header{
     background-color:var(--primary);
     border-bottom:solid .2em var(--call-to-action);
 }
-h1, h2, h3, h4, h5, h6{
+h1{
+    font-family: var(--branding);
+}
+h2, h3, h4, h5, h6{
     font-family: var(--headers);
 }
 p{
