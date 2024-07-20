@@ -10,37 +10,40 @@
     <link rel="stylesheet" href="styles/legacy-landscape.css">
     <link rel="stylesheet" href="styles/legacy-large.css">
     <script src="scripts/legacy.js" defer></script>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <!--<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="manifest" href="/site.webmanifest">-->
 </head>
 <body>
     <header>
-        <div class="logo">
+        <div id="header-branding">
+        
             <img src="images/legacy-logo.webp" alt="L holding keys to a legacy: logo" loading="lazy">
+        
+        
+            <h1>Legacy</h1>
         </div>
-        <div class="branding">
-            <h1>LEGACY</h1>
-        </div>
-        <nav>
-            <p class="menu-icon"></p>
-            <a href="index.html">HOME</a>
-            <a href="about-us.html">WHO WE ARE</a>
-            <a href="contact-info.html">CONTACT US</a>
-            <a href="citations.html">CITATIONS</a>
-        </nav>
-
+        <div class="menu">
+            <button id="hamburger" class="hamburger">☰</button>
+            <nav id="hamburger-menu">
+                
+                <a href="index.html" id="nav-top">HOME</a>
+                <a href="about-us.html">WHO WE ARE</a>
+                <a href="contact-info.html">CONTACT US</a>
+                <a href="citations.html" id="nav-bottom">CITATIONS</a>
+            </nav>
+        </div>  
     </header>
     <main>
         <div class = "hero">
-            <img src="images/IMG_5695.webp" alt="horsetooth resorvoir, Colorado" loading="lazy" class="hero-image">
+            <img src="images/hero/cave-waterfall-portrait.webp" alt="horsetooth resorvoir, Colorado" loading="lazy" class="hero-image">
             <div class="hero-content">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, soluta tenetur odit voluptas facilis sed!</p>
             </div>
         </div>
         <div class="super-content">
-            <div class="thought-bubbles">
+            <div class="thought-bubbles" id="space1">
 
             </div>
             <div class="vision">
@@ -53,20 +56,39 @@
                 <p>At Legacy, we are not just a service provider; we are a trusted partner in our clients’ journey toward a secure and prosperous future. Our commitment to excellence and our focus on the unique needs of the 50 and older demographic set us apart. We take pride in the lasting relationships we build with our clients, founded on trust, integrity, and exceptional service.</p>
                 <p>Join us at Legacy, where your future is our priority, and experience the difference of working with a team that truly cares about your financial health and well-being.</p>
             </div>
-            <div class="thought-bubbles">
+            <div class="thought-bubbles" id="space2">
                 
             </div>
         </div>
- 
+        <div class="contact-us-form">
+            <button id="contact-request"> <img src="images/chat_bubble_icon.svg" alt="chat bubble" loading="lazy" id="chat-icon">Get in Touch</button>
+            <form id="contact-form" method = "get" action = "form-submission.html" onsubmit="entryCounter()">
+                <fieldset>
+                    <legend>Request for Information</legend>
+                    <label>Name*<input type="text" name="name" id="customer-name" required></label>
+                    <label>Phone Number<input type="tel" name="phone-number"></label>
+                    <label>E-mail*<input type="email" name="email" required></label>
+                    <div>Preferred Contact Method</div>
+                        <label><input type ="radio" name="contact-method" value="email">E-mail</label>
+                        <label><input type ="radio" name="contact-method" value="phone">Phone</label>
+                    <div>Which services do you have questions about?</div>
+                    <label><input type ="checkbox" name="medicare" value="yes">Medicare</label>
+                    <label><input type ="checkbox" name="tax-prep" value="yes">Tax Preparation</label>
+                    <label><input type ="checkbox" name="financial-planning" value="yes">Financial Planning</label>
+                    <label>What do you want to talk about?*<input type="textarea" name="questions" required></label>
+                </fieldset>
+                <input type="submit" value="SEND MESSAGE">
+            </form>
+        </div>
 
         
     </main>
     <footer>
         <div class="social-media-icons">
-            <a href="#"><img src="images/social-media/facebook.svg"></a>
+            <!--<a href="#"><img src="images/social-media/facebook.svg"></a>
             <a href="#"><img src="images/social-media/google-plus.svg"></a>
             <a href="#"><img src="images/social-media/linkedin-logo.svg"></a>
-            <a href="#"><img src="images/social-media/google-plus.svg"></a>
+            <a href="#"><img src="images/social-media/google-plus.svg"></a>-->
         </div>
         <div class="footer-logo">
             <img src="images/legacy-logo.webp">
