@@ -3,9 +3,9 @@
 :root{
     --text-color: #0A171F;
     --accent: #4398C7;
-    --call-to-action:#E29D3C;
+    --call-to-action:rgb(226, 157, 60);/*needs to be rgb*/
     --relief:#F0F6FA;
-    --primary:#AFBCC4;
+    --primary:#959ea4;
     --branding:"Cinzel Decorative";
     --headers:"Quintessential", Georgia, "Times New Roman";
     --paragraph:"Gothic A1", "Arial";
@@ -18,16 +18,14 @@ body{
 }
 header{
     background-color:var(--primary);
-    
+    transition: all 0.3s ease;
     width:100vw;
    display:flex;
    flex-direction: column;
    align-items: center;
-   
-
 }
 
-#header-branding{
+.branding{
     display:grid;
     grid-template-columns: 1fr 4fr;
 }
@@ -50,7 +48,9 @@ header img{
     font-size: larger;
     background-color: inherit;
     color: var(--relief);
+    
 }
+
 nav{
     text-align: center;
     display: flex;
@@ -72,11 +72,37 @@ nav a{text-decoration: none;
 #nav-bottom{
     border-bottom:none;
 }
+
+.header-mini{
+    position:fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    justify-content: space-between;
+    align-items: center;
+    display:flex;
+    flex-direction: row;
+    height:10vh;
+    z-index: 1000;    
+}
+
 header h1{
     font-family: var(--branding);
     color:var(--relief);
     text-align: center;
     font-size:3em;
+}
+.sticky-header .branding {
+    flex: 1; 
+}
+.sticky-header img {
+    height: 9vh; 
+}
+.sticky-header h1 {
+    font-size: 1.5em; /* Adjust for mini header */
+}
+.sticky-header #hamburger {
+    font-size: 1.2em; /* Adjust for mini header */
 }
 .hero img{
     max-width: 100vw;
@@ -91,6 +117,7 @@ p{
 
 main{
     background-color: var(--relief);
+    max-width:100%;
 }
 
 .hero{
@@ -108,10 +135,104 @@ main{
     transform: translate(-50%, -50%);
     background-color: rgba(67, 152, 199,.8);
 }
+.super-content{
+    margin:1em;
+    padding:1em auto;
+}
+.super-content h2{
+    text-align: center;
+}
+.super-content p{
+    text-align:justify;
+}
+.footer-logo{
+    display:flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    text-align: center;
+}
+.footer-links{
+    margin: auto 1em;
+}
 .footer-logo img{
-    max-width:15%;
+    max-width:50%;
+}
+.footer-logo h1{
+    font-family: var(--branding);
+    color:var(--relief);
+    text-align: center;
 }
 .hidden {
     display: none;
+}
+#contact-form{
+    display:none;
+}
+#contact-request {
+    background-color: var(--accent); /* Primary button color */
+    color: #fff; /* Text color */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+    position: relative; /* For positioning the shadow */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 5px 15px rgba(var(--call-to-action), 0.3);
+}
+
+#contact-request:before {
+    content: '';
+    position: absolute;
+    top: 5px; /* Adjust for shadow offset */
+    left: 5px; /* Adjust for shadow offset */
+    width: 100%;
+    height: 100%;
+    background-color: var(--call-to-action); /* Shadow color */
+    z-index: -1; /* Place it behind the button */
+    border-radius: 5px; /* Same as the button */
+}
+
+#contact-request:hover {
+    box-shadow: 0px 5px 15px rgba(var(--call-to-action-rgb), 0.3); /* Optional additional shadow on hover */
+}
+
+#chat-icon {
+    margin-right: 10px; /* Space between icon and text */
+}
+footer{
+    background-color: var(--primary);
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content:center;
+}
+#social-media-icons{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    justify-items: center;
+    align-items: center;
+    height: 100%;
+    margin:auto 1em;
+}
+#social-media-icons img{
+    max-width:2em;
+    height:auto;
+    justify-content: space-around;
+    margin: .5em;
+}
+#open-quote-icon, #close-quote-icon{
+    max-width:1.2em;
+    height:auto;
+}
+#social-media-icons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
