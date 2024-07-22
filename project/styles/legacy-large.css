@@ -1,0 +1,15 @@
+@media only screen and (min-width:1000px){
+   .menu{
+    flex-direction: row;
+    justify-content: space-around;
+   } 
+   #hamburger-menu{
+    flex-direction: row;
+    } 
+    .hero {
+        position: relative;
+        width: 100vw;
+        height: auto;
+    }
+
+   }

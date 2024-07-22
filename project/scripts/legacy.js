@@ -157,23 +157,29 @@ const partners=[
         fname:"Adam",
         lname:"Ashby",
         product:"Medicare",
-        image:'adam-profile.webp'
+        image:'images/adam-profile.webp',
+        bio:`"Adam has been offering insurance and financial advice since 2008, with a strong focus on the Public Education market. Since joining Legacy, Adam has channeled his passion for service into helping clients with Medicare, particularly Medicare Supplements. He is excited to contribute his expertise to a new organization that shares his commitment to service.`
     },
     {
         fname:"Cindy",
         lname:"Ashby",
         product:"Tax Preparation",
-        image:'cindy-profile.webp4'
+        image:'images/cindy-profile.webp',
+        bio:`Cindy has been a tax service professional since 2002, bringing a wealth of knowledge to Legacy when she joined at the end of 2022. Her integration into the Legacy family has been seamless, and her clients benefit from her extensive experience and personal dedication to their financial well-being.`
     },
     {
         fname:"Kala",
         lname:"Bowers",
-        product:"Medicare"
+        product:"Medicare",
+        image:'images/kala-profile.webp',
+        bio:`Kala has focused her career on Medicare comparison and enrollment, particularly Medicare Supplements. As a co-founder of Legacy, she has worked alongside Larry to build the business since 2002. Kala's compassionate approach ensures that each client feels like part of the Legacy family.`
     },
     {
         fname:"Larry",
         lname:"Bowers",
-        product:"Financial Planning"
+        product:"Financial Planning",
+        image:'images/larry-profile.webp',
+        bio:'Larry has been dedicated to financial planning for decades, specializing in annuities. He co-founded Legacy in 2002 with the vision of meeting the unique needs of a specific market. Larry’s commitment to treating each client as family has fostered lasting relationships of trust and success.'
     }
 ];
 
@@ -241,12 +247,87 @@ const heroes= [
 document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.getElementById("hamburger");
     const navMenu = document.getElementById("hamburger-menu");
-    const space1= document.getElementById("space1");
-    const space2 = document.getElementById("space2");
+    const contactRequestButton = document.getElementById('contact-request');
+    const contactForm = document.getElementById('contact-form');
+    const exitFormButton = document.getElementById('exit-form');
+    const heroImages = document.querySelector('.hero-images');
+    const footer = document.querySelector('footer');
+    const heroInner = document.querySelector('.hero-inner');
+    const prevButton = document.querySelector('.prev');
+    const nextButton = document.querySelector('.next');
+    const header = document.querySelector('header'); // Define header
+    let lastScrollTop = 0; // Define lastScrollTop
+    const contactFormOverlay = document.getElementById('contact-form-overlay');
+
+    const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1 // Trigger animation when 10% of the element is in view
+    };
+
+    let currentIndex = 0; // Ensure this is defined
+    const heroHeight = heroImages ? heroImages.offsetHeight : 0;
+    const footerOffsetTop = footer ? footer.offsetTop : document.body.scrollHeight;
+
+    const createHeroImgHTML = (hero) => {
+        const { landscapeLarge, landscapeSmall, portraitIMG, alt } = hero;
+        return `
+            <source srcset="images/hero/${landscapeLarge}.webp" media="(min-width: 1000px)" alt="${alt}" loading="lazy">
+            <source srcset="images/hero/${landscapeSmall}.webp" media="(min-width: 550px)" alt="${alt}" loading="lazy">
+            <img src="images/hero/${portraitIMG}.webp" alt="${alt}" loading="lazy">
+        `;
+    };
+
+    const createHeroCaptionHTML = (hero) => {
+        const { captionHeading, captionText } = hero;
+        return `
+            <h3>${captionHeading}</h3>
+            <p>${captionText}</p>
+        `;
+    };
+
+    function loadSlide(array, index) {
+        const hero = array[index];
+
+        const heroItem = document.createElement('div');
+        heroItem.classList.add('hero-item');
+
+        heroItem.innerHTML = `
+            ${createHeroImgHTML(hero)}
+            <div class="caption">
+                ${createHeroCaptionHTML(hero)}
+            </div>
+        `;
+
+        const heroInner = document.querySelector('.hero-inner');
+        heroInner.appendChild(heroItem);
+        requestAnimationFrame(() => {
+            heroItem.style.opacity = '1';
+        });
+
+        if (heroInner.children.length > 1) {
+            setTimeout(() => {
+                heroInner.removeChild(heroInner.children[0]);
+            }, 500);
+        }
+    }
+
+    let currentSlide = 0;
+    loadSlide(heroes, currentSlide);
+
+    document.querySelector('.next').addEventListener('click', () => {
+        currentSlide = (currentSlide + 1) % heroes.length;
+        loadSlide(heroes, currentSlide);
+    });
+
+    document.querySelector('.prev').addEventListener('click', () => {
+        currentSlide = (currentSlide - 1 + heroes.length) % heroes.length;
+        loadSlide(heroes, currentSlide);
+    });
 
     const toggleButtonVisibility = () => {
         const viewWidth = window.innerWidth;
-        const maxScreenWidth = 500;
+        const maxScreenWidth = 999;
 
         if (hamburger) {
             if (viewWidth > maxScreenWidth) {
@@ -257,11 +338,10 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 hamburger.classList.remove('hidden');
                 navMenu.classList.add('hidden');
-                navMenu.classList.remove('show')
+                navMenu.classList.remove('show');
             }
         }
     };
-
 
     const toggleNavMenu = () => {
         if (navMenu) {
@@ -275,10 +355,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     };
-    if (viewWidth < maxScreenWidth)
-      {space1.classList.add('hidden');
-        space2.classList.add('hidden');
-      };
 
     toggleButtonVisibility();
     window.addEventListener('resize', toggleButtonVisibility);
@@ -286,56 +362,122 @@ document.addEventListener('DOMContentLoaded', () => {
     if (hamburger) {
         hamburger.addEventListener('click', toggleNavMenu);
     }
-    const contactRequestButton = document.getElementById('contact-request');
-    const contactForm = document.getElementById('contact-form');
-    const exitFormButton = document.getElementById('exit-form');
 
-    contactRequestButton.addEventListener('click', function() {
-        contactForm.style.display = 'block';
-        contactRequestButton.style.display = 'none';
-    });
+    if (contactRequestButton && contactForm && exitFormButton) {
+        contactRequestButton.addEventListener('click', function() {
+            contactForm.style.display = 'block';
+            contactRequestButton.style.display = 'none';
+        });
 
-    exitFormButton.addEventListener('click', function() {
-        contactForm.style.display = 'none';
-        contactRequestButton.style.display = 'block';
-    });
+        exitFormButton.addEventListener('click', function() {
+            contactForm.style.display = 'none';
+            contactRequestButton.style.display = 'block';
+        });
+    }
 
-    function createNewsflashCard(newsflashes){
-        let randomIndex=getRandomIndex(newsflashes.length);
+    function createNewsflashCard(newsflashes) {
+        let randomIndex = getRandomIndex(newsflashes.length);
         let currentNewsFlash = newsflashes[randomIndex];
-        newsFlashHTML = `<p>${currentNewsFlash}</p>`;
-        return newsFlashhtml;
+        let newsFlashHTML = `<p>${currentNewsFlash.info}</p>`;
+        return newsFlashHTML;
     }
+
     function createTestimonialCard(testimonials) {
-        
-      let openQuote = `<img src="images/open-quote.svg" alt="open-quote" id="open-quote-icon">`;
-      let closeQuote = `<img src="images/close-quote.svg" alt="close-quote" id="close-quote-icon">`;
-  
-      let currentTestimonial = testimonials[getRandomIndex(testimonials.length)];
-  
-      let testimonialCardHTML = `
-          <div class="testimonial-card">
-              ${openQuote}
-              <p class="review">${currentTestimonial.comment}</p>
-              ${closeQuote}
-              <p class="review-author">${currentTestimonial.author}</p>
-          </div>
-      `;
-  
-      return testimonialCardHTML;
-  }
-    function getRandomIndex(arrayLength){
-        return Math.floor(Math.random() * arrayLength)
+        let openQuote = `<img src="images/open-quote.svg" alt="open-quote" id="open-quote-icon">`;
+        let closeQuote = `<img src="images/close-quote.svg" alt="close-quote" id="close-quote-icon">`;
+
+        let currentTestimonial = testimonials[getRandomIndex(testimonials.length)];
+
+        let testimonialCardHTML = `
+            <div class="testimonial-card">
+                ${openQuote}
+                <p class="review">${currentTestimonial.comment}</p>
+                ${closeQuote}
+                <p class="review-author">--${currentTestimonial.author}</p>
+            </div>
+        `;
+
+        return testimonialCardHTML;
     }
+
+    function getRandomIndex(arrayLength) {
+        return Math.floor(Math.random() * arrayLength);
+    }
+
     for (let div of document.querySelectorAll('.thought-bubble')) {
-      let randomThought = Math.random() < 0.65 ? 'newsflash' : 'testimonial';
-      if (randomThought === 'newsflash')
-      {
-        div.innerHTML = createNewsflashCard(newsflashes);
-      }
-      else
-      {
-        div.innerHTML = createTestimonialCard(testimonials)
-      }
+        let randomThought = Math.random() < 0.65 ? 'newsflash' : 'testimonial';
+        if (randomThought === 'newsflash') {
+            div.innerHTML = createNewsflashCard(newsflashes);
+        } else {
+            div.innerHTML = createTestimonialCard(testimonials);
+        }
     }
-})
+
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const footerOffsetTop = footer ? footer.offsetTop : document.body.scrollHeight;
+        const headerHeight = header ? header.offsetHeight : 0;
+
+        if (scrollTop > lastScrollTop) {
+            header.classList.add('header-mini');
+            if (scrollTop + headerHeight >= footerOffsetTop) {
+                header.classList.remove('sticky-header');
+                header.classList.add('hidden-header');
+            } else {
+                header.classList.add('sticky-header');
+                header.classList.remove('hidden-header');
+            }
+        } else {
+            header.classList.remove('sticky-header');
+            header.classList.remove('hidden-header');
+        }
+
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+    });
+
+    function toggleFormButtonVisibility() {
+        const scrollY = window.scrollY;
+        const footerTop = footer ? footer.offsetTop : document.body.scrollHeight;
+        const contactRequestButtonHeight = contactRequestButton.offsetHeight;
+
+        if (scrollY > heroHeight && scrollY < footerTop - contactRequestButtonHeight) {
+            contactRequestButton.classList.add('show');
+        } else {
+            contactRequestButton.classList.remove('show');
+        }
+    }
+
+    toggleFormButtonVisibility();
+    window.addEventListener('scroll', toggleFormButtonVisibility);
+
+    // Show the contact form
+    contactRequestButton.addEventListener('click', () => {
+        contactFormOverlay.classList.remove('hidden');
+    });
+
+    // Hide the contact form
+    exitFormButton.addEventListener('click', () => {
+        contactFormOverlay.classList.add('hidden');
+    });
+
+    // Optionally, hide the contact form if clicking outside of it
+    contactFormOverlay.addEventListener('click', (e) => {
+        if (e.target === contactFormOverlay) {
+            contactFormOverlay.classList.add('hidden');
+        }
+    });
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const bubble = entry.target;
+                bubble.classList.add('slide-in');
+                observer.unobserve(bubble);
+            }
+        });
+    }, options);
+    
+    document.querySelectorAll('.thought-bubble').forEach(bubble => {
+        observer.observe(bubble);
+    });
+});

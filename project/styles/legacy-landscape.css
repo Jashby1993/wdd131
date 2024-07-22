@@ -1,0 +1,9 @@
+@media only screen and (orientation: landscape) and (max-width: 999px) {
+
+    
+    .footer-logo img {
+        padding-top: 1em;
+        max-width: 25% ;
+        height:auto;
+    }
+}
