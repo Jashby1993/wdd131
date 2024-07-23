@@ -1,15 +1,83 @@
-@media only screen and (min-width:1000px){
-   .menu{
-    flex-direction: row;
-    justify-content: space-around;
-   } 
-   #hamburger-menu{
-    flex-direction: row;
-    } 
+@media only screen and (min-width:721px){
+    .menu{       
+        display: flex;
+        flex-direction: column;
+    }
+    .super-content {
+        max-width: 90vw;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .menu {
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%; /* Ensure it spans the full width of the header */
+    }
+
+    nav {
+        flex-direction: row; /* Row layout for nav items */
+        justify-content: space-between;
+        align-items: center;
+        width: calc(100% - 5em);; /* Ensure it spans the full width of the header */
+        padding: 0.1em 1em; /* Adjust padding as needed */
+    }
+
+    nav a {
+        padding: 0.2em 1em; /* Adjust padding as needed */
+        border: none; /* Remove borders for a clean look */
+    }
+
+    #nav-top,
+    #nav-bottom {
+        border: none; /* Ensure no borders are shown */
+    }
+ 
     .hero {
         position: relative;
         width: 100vw;
-        height: auto;
+        height: 100vh;
     }
 
+    .caption {
+        position: absolute;
+        bottom: 10em;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: var(--accent-transparent);
+        color: var;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    footer{
+        clear:both;
+        background-color: var(--primary);
+        display:flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-content:center;
+    }
+    .footer-logo{
+        display:flex;
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center;
+        text-align: center;
+    }
+    .footer-links{
+        margin: auto 1em;
+    }
+    .footer-logo img {
+        padding-top: 1em;
+        max-width: 30%;
+    }
+    .footer-logo h1{
+        font-family: var(--branding);
+        color:var(--relief);
+        text-align: center;
+    }
+    #footer-menu{
+        flex-direction: column;
+        width: fit-content;
+    }
    }

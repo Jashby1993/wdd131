@@ -272,9 +272,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const createHeroImgHTML = (hero) => {
         const { landscapeLarge, landscapeSmall, portraitIMG, alt } = hero;
         return `
-            <source srcset="images/hero/${landscapeLarge}.webp" media="(min-width: 1000px)" alt="${alt}" loading="lazy">
-            <source srcset="images/hero/${landscapeSmall}.webp" media="(min-width: 550px)" alt="${alt}" loading="lazy">
+            <picture>
+            <source srcset="images/hero/${landscapeLarge}.webp" media="(min-width: 721px)" alt="${alt}" loading="lazy">
+            <source srcset="images/hero/${landscapeSmall}.webp" media="(min-width: 501px)" alt="${alt}" loading="lazy">
             <img src="images/hero/${portraitIMG}.webp" alt="${alt}" loading="lazy">
+            </picture>
         `;
     };
 
@@ -378,7 +380,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function createNewsflashCard(newsflashes) {
         let randomIndex = getRandomIndex(newsflashes.length);
         let currentNewsFlash = newsflashes[randomIndex];
-        let newsFlashHTML = `<p>${currentNewsFlash.info}</p>`;
+        let newsFlashHTML = `<p class="newsflash">${currentNewsFlash.info}</p>`;
         return newsFlashHTML;
     }
 
