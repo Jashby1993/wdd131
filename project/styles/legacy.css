@@ -23,9 +23,10 @@
 }
 
 :root{
-    --text-color: #0B1A22;
+    --text-color: #040C10;
     --accent-transparent: rgba(67,152,199,0.65);
     --accent: #4398C7;
+    --accent-darker:#173A4F;
     --call-to-action:rgb(226, 157, 60);/*needs to be rgb*/
     --relief:#F0F6FA;
     --primary:#B4BABF;
