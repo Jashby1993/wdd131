@@ -53,7 +53,7 @@
             <h2>WHO WE ARE AND WHAT WE DO</h2>
             <div id = "mission">
                 <h3>The Legacy Mission </h3>
-                <p class="impact">"Legacy's mission is to share in the success of our clients through personalized service and support tailored to the needs of those aged 50 and older."</p>
+                <p id="mission-statement">"Legacy's mission is to share in the success of our clients through personalized service and support tailored to the needs of those aged 50 and older."</p>
                 <p>At Legacy, our mission is to partner with individuals who are 50 and older, providing them with the specialized financial support they need to achieve their goals and secure their future. We recognize that this stage of life comes with its own set of financial challenges and opportunities, and our mission is to navigate these with you.</p>
                 <p>We pride ourselves in our personalized service, which means that we just don’t offer one-size-fits-all solutions. We take the time to understand each client's unique circumstances, preferences, and aspirations. Whether it’s planning for retirement, managing investments, or addressing specific financial concerns, we tailor our approach to ensure that our recommendations are relevant and actionable.</p>
                 <p>Legacy's complete support encompasses all aspects of financial planning that are critical for those in their 50s and beyond. From strategic retirement planning and tax optimization to Medicare assistance and long-term care planning, we provide comprehensive guidance that addresses the full spectrum of financial needs</p>
@@ -93,6 +93,38 @@
                     </li>
                 </ul>
 
+            </div>
+            <div class="contact-us-form">
+                <button id="contact-request"> <img src="images/chat_bubble_icon.svg" alt="chat bubble" loading="lazy" id="chat-icon">Get in Touch</button>
+                <div id="contact-form-overlay" class="contact-form-overlay hidden">
+                    <button id="exit-form">❌</button>
+                    <form id="contact-form" method="get" action="form-submission.html" class="information-request">
+                        <fieldset>
+                            <legend>Request for Information</legend>
+                            <fieldset id="client-name">
+                            <label>First Name*<input type="text" name="fname" id="customer-name" required autocomplete="given-name"></label>
+                            <label>Last Name*<input type="text" name="lname" id="customer-name" required autocomplete="family-name"></label>
+                            
+                            <legend>Preferred Contact Method</legend>
+                            <div id="radio">
+                                <label><input type="radio" name="preferred-communication" value="email" id="email">E-mail</label>
+                                <label><input type="radio" name="preferred-communication" value="phone" id="phone">Phone</label>
+                            </div>
+                            <label>Phone Number<input type="tel" name="phone-number" autocomplete="tel"></label>
+                            <label>E-mail*<input type="email" name="email" required autocomplete="email"></label>
+                            </fieldset>
+                            <fieldset id="message">
+                            <div>Which services do you have questions about?</div>
+                            <div class="checkboxes">
+                                <label><input type="checkbox" name="medicare" value="yes">Medicare</label>
+                                <label><input type="checkbox" name="tax-prep" value="yes">Tax Preparation</label>
+                                <label><input type="checkbox" name="financial-planning" value="yes">Financial Planning</label>
+                            </div>
+                            <label>What do you want to talk about?*<textarea name="questions" required></textarea></label>
+                            <input type="submit" value="SEND MESSAGE">
+                        </fieldset>
+                    </form>
+                </div>
             </div>
         </div>
         <div class="bios">

@@ -291,9 +291,11 @@ document.addEventListener('DOMContentLoaded', () => {
     function createBioHTML(partner) {
         return `
             <img src="${partner.image}" alt="profile photo of ${partner.fname} ${partner.lname}" loading="lazy">
+            <div class="bio-text">
             <p class="bio-name">${partner.fname} ${partner.lname}</p>
             <p class="bio-content">${partner.bio}</p>
             <p class="bio-market">${partner.product}</p>
+            </div>
         `;
     }
 

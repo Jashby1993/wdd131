@@ -80,4 +80,12 @@
         flex-direction: column;
         width: fit-content;
     }
+    .mission-and-values{
+
+        display:grid;
+        grid-template-columns: 3fr 2fr;
+    }
+    .mission-and-values h2{
+        grid-column: span 2;
+    }
    }

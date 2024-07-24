@@ -177,7 +177,7 @@ main{
 .hero {
     position: relative;
     width: 100vw;
-    height: 100vh; /* Ensures hero section takes the full viewport height */
+    height: 75vh; /* Ensures hero section takes the full viewport height */
     overflow: hidden;
 }
 
@@ -212,7 +212,7 @@ main{
 
 .caption {
     position: absolute;
-    bottom: 20px;
+    bottom: 25%;
     left: 50%;
     transform: translateX(-50%);
     background-color: var(--accent-transparent);
@@ -515,8 +515,77 @@ form div{
     font-size: 1em;
 }
 
-.partnerBio img{
-    border-radius:50%;
-    width:60%;
-    max-width:500px;
+#core-values ul{
+    list-style-type: none;
+}
+#core-values h4{
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+.mission-and-values h2 , .mission-and-values h3{
+    TEXT-ALIGN: center;
+    font-size: 2em;
+    font-family: var(--headers);
+}
+.partnerBio {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd; /* Optional: add a border */
+    border-radius: 8px; /* Optional: rounded corners for the card */
+    overflow: hidden; /* Ensure content doesn't overflow card boundaries */
+}
+
+/* Style for the image */
+.partnerBio img {
+    width: 100px; /* Adjust size as needed */
+    height: 100px; /* Adjust size as needed */
+    border-radius: 50%;
+    position: absolute;
+    left: 10px; /* Adjust positioning */
+    top: 50%;
+    transform: translateY(-50%); /* Center vertically */
+    border: 3px solid #fff; /* Optional: add a border around the image */
+}
+
+/* Container for text content */
+.partnerBio .bio-text {
+    margin-left: 120px; /* Adjust to leave space for the image */
+    flex: 1;
+}
+
+/* Style for name */
+.bio-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Style for bio content */
+.bio-content {
+    margin-bottom: 10px;
+}
+
+/* Style for product */
+.bio-market {
+    font-style: italic;
+    color: #555; /* Adjust color as needed */
+}
+
+#testimonial-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+}
+#testimonial-grid .testimonial-card{
+    margin:.75em;
+    background-color: var(--accent-transparent);
+    border:3px solid var(--accent-darker);
+    border-radius: 5px;
+}
+
+#mission{
+    padding:0 .75em;
+    margin: .2em .5em;
 }
