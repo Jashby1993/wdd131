@@ -88,4 +88,8 @@
     .mission-and-values h2{
         grid-column: span 2;
     }
+    #testimonial-grid{
+        display:grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
    }

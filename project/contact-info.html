@@ -1,41 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Legacy Financial Colorado : Contact Us</title>
-    <meta name="description" content="Legacy Financial Services: Tax Preparation, Medicare Solutions, Financial Advisor">
-    <meta name="author" content="Justin Ashby">
-    <link rel="stylesheet" href="styles/legacy.css">
-    <link rel="stylesheet" href="styles/legacy-landscape.css">
-    <link rel="stylesheet" href="styles/legacy-large.css">
-    <script src="scripts/legacy.js" defer></script>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contact Us!:Legacy Financial Colorado</title>
+        <meta name="description" content="Legacy Financial Services: Tax Preparation, Medicare Solutions, Financial Advisor">
+        <meta name="author" content="Justin Ashby">
+        <link rel="stylesheet" href="styles/legacy.css">
+        <link rel="stylesheet" href="styles/legacy-landscape.css">
+        <link rel="stylesheet" href="styles/legacy-large.css">
+        <script src="scripts/legacy-contact.js" defer></script>
+        <link rel="icon" href="images/favicon/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <header>
-        <div class="logo">
-
-        </div>
         <div class="branding">
-
+        
+            <img src="images/legacy-logo.webp" alt="L holding keys to a legacy: logo" loading="lazy">
+        
+        
+            <h1>Legacy</h1>
         </div>
-        <nav>
-            <a href="index.html">HOME</a>
-            <a href="about-us.html">WHO WE ARE</a>
-            <a href="contact-info.html">CONTACT US</a>
-        </nav>
+        <div class="menu">
+            <button id="hamburger" class="hamburger">☰</button>
+            <nav id="hamburger-menu" class="hidden">
+                
+                <a href="index.html" id="nav-top">HOME</a>
+                <a href="about-us.html">WHO WE ARE</a>
+                <a href="contact-info.html">CONTACT US</a>
+                <a href="citations.html" id="nav-bottom">CITATIONS</a>
+            </nav>
+        </div>
+  
     </header>
     <main>
-        <h1></h1>
+        <h2>Proudly Serving our Local North Colorado Residents!</h2>
         <div class = "office-info">
             <div id="map-widget">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3031.568026396087!2d-105.08462702451001!3d40.55113184744907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87694ba1282738e1%3A0x2978f1eeb92b018c!2s2627%20Redwing%20Rd%20%23320%2C%20Fort%20Collins%2C%20CO%2080525!5e0!3m2!1sen!2sus!4v1721670958484!5m2!1sen!2sus" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-            <div id="hours-of-operation"></div>
+            <div id="hours-of-operation">
+                <h3>Hours of Operation</h3>
+                
+            </div>
         </div>
         <div class="appointment-widget">
             <!-- Calendly inline widget begin -->
@@ -44,7 +52,32 @@
 <!-- Calendly inline widget end -->
         </div>
         <div class="contact-form">
-
+            <form id="contact-form" method="get" action="form-submission.html" class="information-request">
+                <fieldset>
+                    <legend>Request for Information</legend>
+                    <fieldset id="client-name">
+                    <label>First Name*<input type="text" name="fname" id="customer-name" required autocomplete="given-name"></label>
+                    <label>Last Name*<input type="text" name="lname" id="customer-name" required autocomplete="family-name"></label>
+                    
+                    <legend>Preferred Contact Method</legend>
+                    <div id="radio">
+                        <label><input type="radio" name="preferred-communication" value="email" id="email">E-mail</label>
+                        <label><input type="radio" name="preferred-communication" value="phone" id="phone">Phone</label>
+                    </div>
+                    <label>Phone Number<input type="tel" name="phone-number" autocomplete="tel"></label>
+                    <label>E-mail*<input type="email" name="email" required autocomplete="email"></label>
+                    </fieldset>
+                    <fieldset id="message">
+                    <div>Which services do you have questions about?</div>
+                    <div class="checkboxes">
+                        <label><input type="checkbox" name="medicare" value="yes">Medicare</label>
+                        <label><input type="checkbox" name="tax-prep" value="yes">Tax Preparation</label>
+                        <label><input type="checkbox" name="financial-planning" value="yes">Financial Planning</label>
+                    </div>
+                    <label>What do you want to talk about?*<textarea name="questions" required></textarea></label>
+                    <input type="submit" value="SEND MESSAGE">
+                </fieldset>
+            </form>
         </div>
     </main>
     <footer>

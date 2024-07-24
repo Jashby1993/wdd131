@@ -260,11 +260,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const preferenceRadios = document.querySelectorAll('input[name="preferred-communication"]');
     const testimonialGrid = document.getElementById('testimonial-grid');
     const biosDiv = document.querySelector('.bios');
-    let currentSlide = 0; // Ensure this is defined at the top or in the appropriate scope
+    
 
-    function populateTestimonialGrid(testimonials) {
+    function populateTestimonialGrid(testimonials, j) {
+        
         if (testimonialGrid) {
-            for (let i = 0; i < 6; i++) {
+            for (let i = 0; i < j; i++) {
                 let anotherReview = document.createElement('div');
                 anotherReview.classList.add('review');
                 anotherReview.innerHTML = createTestimonialCard(testimonials);
@@ -272,9 +273,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
-
-    // Assuming `testimonials` is already defined
-    populateTestimonialGrid(testimonials);
+    function getNumTestimonials(){
+        const viewWidth = window.innerWidth;
+        let j = (viewWidth <501) ? 6:
+        (viewWidth < 721) ? 9:
+        12;        
+        return j;
+    }
+    
+    populateTestimonialGrid(testimonials, getNumTestimonials());
 
     preferenceRadios.forEach(radio => {
         radio.addEventListener('change', function() {
