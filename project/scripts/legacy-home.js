@@ -152,37 +152,36 @@ const testimonials = [
     }
   ];
 
-  const partners = [
+const partners=[
     {
-        fname: "Larry",
-        lname: "Bowers",
-        product: "Financial Planning",
-        image: 'images/larry-profile.webp',
-        bio: 'Larry has been dedicated to financial planning for decades, specializing in annuities. He co-founded Legacy in 2002 with the vision of meeting the unique needs of a specific market. Larry’s commitment to treating each client as family has fostered lasting relationships of trust and success.'
+        fname:"Adam",
+        lname:"Ashby",
+        product:"Medicare",
+        image:'images/adam-profile.webp',
+        bio:`"Adam has been offering insurance and financial advice since 2008, with a strong focus on the Public Education market. Since joining Legacy, Adam has channeled his passion for service into helping clients with Medicare, particularly Medicare Supplements. He is excited to contribute his expertise to a new organization that shares his commitment to service.`
     },
     {
-        fname: "Kala",
-        lname: "Bowers",
-        product: "Medicare",
-        image: 'images/kala-profile.webp',
-        bio: `Kala has focused her career on Medicare comparison and enrollment, particularly Medicare Supplements. As a co-founder of Legacy, she has worked alongside Larry to build the business since 2002. Kala's compassionate approach ensures that each client feels like part of the Legacy family.`
+        fname:"Cindy",
+        lname:"Ashby",
+        product:"Tax Preparation",
+        image:'images/cindy-profile.webp',
+        bio:`Cindy has been a tax service professional since 2002, bringing a wealth of knowledge to Legacy when she joined at the end of 2022. Her integration into the Legacy family has been seamless, and her clients benefit from her extensive experience and personal dedication to their financial well-being.`
     },
     {
-        fname: "Cindy",
-        lname: "Ashby",
-        product: "Tax Preparation",
-        image: 'images/cindy-profile.webp',
-        bio: `Cindy has been a tax service professional since 2002, bringing a wealth of knowledge to Legacy when she joined at the end of 2022. Her integration into the Legacy family has been seamless, and her clients benefit from her extensive experience and personal dedication to their financial well-being.`
+        fname:"Kala",
+        lname:"Bowers",
+        product:"Medicare",
+        image:'images/kala-profile.webp',
+        bio:`Kala has focused her career on Medicare comparison and enrollment, particularly Medicare Supplements. As a co-founder of Legacy, she has worked alongside Larry to build the business since 2002. Kala's compassionate approach ensures that each client feels like part of the Legacy family.`
     },
     {
-        fname: "Adam",
-        lname: "Ashby",
-        product: "Medicare",
-        image: 'images/adam-profile.webp',
-        bio: `"Adam has been offering insurance and financial advice since 2008, with a strong focus on the Public Education market. Since joining Legacy, Adam has channeled his passion for service into helping clients with Medicare, particularly Medicare Supplements. He is excited to contribute his expertise to a new organization that shares his commitment to service.`
+        fname:"Larry",
+        lname:"Bowers",
+        product:"Financial Planning",
+        image:'images/larry-profile.webp',
+        bio:'Larry has been dedicated to financial planning for decades, specializing in annuities. He co-founded Legacy in 2002 with the vision of meeting the unique needs of a specific market. Larry’s commitment to treating each client as family has fostered lasting relationships of trust and success.'
     }
 ];
-
 
 const heroes= [
     {
@@ -259,29 +258,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('header'); // Define header
     let lastScrollTop = 0; // Define lastScrollTop
     const contactFormOverlay = document.getElementById('contact-form-overlay');
-    
-
-    function createBioHTML(partner) {
-        return `
-            <img src="${partner.image}" alt="profile photo of ${partner.fname} ${partner.lname}" loading="lazy">
-            <p class="bio-name">${partner.fname} ${partner.lname}</p>
-            <p class="bio-content">${partner.bio}</p>
-            <p class="bio-market">${partner.product}</p>
-        `;
-    }
-    
-    function fillBios(partners) {
-        for (let i = 0; i < partners.length; i++) {
-            let bioDiv = document.createElement('div');
-            bioDiv.classList.add('partnerBio');
-            bioDiv.innerHTML = createBioHTML(partners[i]);
-            const biosDiv = document.querySelector('.bios'); // Assuming '.bios' is the correct class or ID
-            biosDiv.append(bioDiv);
-        }
-    }
-    
-    fillBios(partners);
-    
 
     const options = {
         root: null,
@@ -424,9 +400,6 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
 
         return testimonialCardHTML;
-    }
-    for (let div of document.querySelectorAll('.one-testimonial')){
-        div.innerHTML = createTestimonialCard(testimonials);
     }
 
     function getRandomIndex(arrayLength) {

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styles/legacy.css">
     <link rel="stylesheet" href="styles/legacy-landscape.css">
     <link rel="stylesheet" href="styles/legacy-large.css">
-    <script src="scripts/legacy.js" defer></script>
+    <script src="scripts/legacy-home.js" defer></script>
     <link rel="icon" href="images/favicon/favicon.ico" type="image/x-icon">
 
 </head>
@@ -37,7 +37,11 @@
     <main>
         <div class = "hero">
             <div class="hero-inner">
-                <!--<img src="images\hero\owls-portrait.webp">-->
+               <!--<picture>
+                <source srcset="images/hero/inside-office-landscapeLarge.webp" media="(min-width: 721px)" alt="Inside the Legacy Office" loading="lazy">
+                <source srcset="images/hero/inside-office-landscapeSmall.webp" media="(min-width: 501px)" alt="Inside the Legacy Office" loading="lazy">
+                <img src="images/hero/inside-office-portrait.webp" alt="Inside the Legacy Office" loading="lazy">
+               </picture>-->
             </div>
             <button class="prev">❮</button>
             <button class="next">❯</button>
@@ -49,10 +53,10 @@
                 <p>At Legacy, we are dedicated to securing the future of our clients through personalized and comprehensive financial planning, tax preparation, and Medicare review and enrollment services. We specialize in serving individuals aged 50 and older, recognizing that this stage of life brings unique challenges and opportunities.</p>
                 <p>Our mission is to provide our clients with the individual attention they deserve, ensuring that each aspect of their financial well-being is meticulously managed. We understand that navigating the complexities of financial planning, tax obligations, and Medicare options can be overwhelming. Therefore, we strive to offer clarity and peace of mind through our expert guidance and support.</p>
                 <div class="thought-bubble" id="bubble1"></div>
-                <p><span class="emphasis">Financial Planning:</span>Our approach to financial planning is tailored to meet the evolving needs of our clients. We aim to help them achieve their financial goals, whether it’s preparing for retirement, managing investments, or planning their estate. Our team of experienced advisors works closely with each client to create a customized plan that aligns with their long-term aspirations.</p>
-                <p><span class="emphasis">Tax Preparation:</span>Tax preparation can be a daunting task, particularly for those with complex financial situations. At Legacy, we take the stress out of tax season by providing thorough and accurate tax preparation services. We stay abreast of the latest tax laws and regulations to ensure that our clients receive the maximum benefits and deductions available to them.</p>
+                <p><span class="emphasis">Financial Planning:</span>  Our approach to financial planning is tailored to meet the evolving needs of our clients. We aim to help them achieve their financial goals, whether it’s preparing for retirement, managing investments, or planning their estate. Our team of experienced advisors works closely with each client to create a customized plan that aligns with their long-term aspirations.</p>
+                <p><span class="emphasis">Tax Preparation:</span>  Tax preparation can be a daunting task, particularly for those with complex financial situations. At Legacy, we take the stress out of tax season by providing thorough and accurate tax preparation services. We stay abreast of the latest tax laws and regulations to ensure that our clients receive the maximum benefits and deductions available to them.</p>
                 <div class="thought-bubble" id="bubble2"></div>
-                <p><span class="emphasis">Medicare Review and Enrollment:</span>Navigating Medicare options can be confusing, but it is a crucial aspect of health care for individuals over 50. Our experts are here to simplify the process. We provide detailed reviews of Medicare plans, helping our clients understand their options and make informed decisions about their health coverage. Our goal is to ensure that they receive the best possible care and support as they age.</p>
+                <p><span class="emphasis">Medicare Review and Enrollment:</span>  Navigating Medicare options can be confusing, but it is a crucial aspect of health care for individuals over 50. Our experts are here to simplify the process. We provide detailed reviews of Medicare plans, helping our clients understand their options and make informed decisions about their health coverage. Our goal is to ensure that they receive the best possible care and support as they age.</p>
                 <p>At Legacy, we are not just a service provider; we are a trusted partner in our clients’ journey toward a secure and prosperous future. Our commitment to excellence and our focus on the unique needs of the 50 and older demographic set us apart. We take pride in the lasting relationships we build with our clients, founded on trust, integrity, and exceptional service.</p>
                 <div class="thought-bubble" id="bubble3"></div>
                 <p>At Legacy, we understand that financial planning, tax preparation, and Medicare services are more than just numbers and policies—they are the foundation of a secure and fulfilling future. Our team is dedicated to providing personalized solutions tailored to your unique needs. Whether you're planning for retirement, navigating tax season, or selecting the best Medicare options, we are here to guide you every step of the way.</p>
@@ -62,22 +66,27 @@
                 <button id="contact-request"> <img src="images/chat_bubble_icon.svg" alt="chat bubble" loading="lazy" id="chat-icon">Get in Touch</button>
                 <div id="contact-form-overlay" class="contact-form-overlay hidden">
                     <button id="exit-form">❌</button>
-                    <form id="contact-form" method="get" action="form-submission.html">
+                    <form id="contact-form" method="get" action="form-submission.html" class="information-request">
                         <fieldset>
                             <legend>Request for Information</legend>
-                            <label>Name*<input type="text" name="name" id="customer-name" required autocomplete="name"></label>
+                            <fieldset id="client-name">
+                            <label>First Name*<input type="text" name="fname" id="customer-name" required autocomplete="given-name"></label>
+                            <label>Last Name*<input type="text" name="lname" id="customer-name" required autocomplete="family-name"></label>
+                            
+                            <legend>Preferred Contact Method</legend>
+                            <div id="radio">
+                                <label><input type="radio" name="preferred-communication" value="email" id="email">E-mail</label>
+                                <label><input type="radio" name="preferred-communication" value="phone" id="phone">Phone</label>
+                            </div>
                             <label>Phone Number<input type="tel" name="phone-number" autocomplete="tel"></label>
                             <label>E-mail*<input type="email" name="email" required autocomplete="email"></label>
-                            <div>Preferred Contact Method</div>
-                            <div id="radio">
-                                <label><input type="radio" name="contact-method" value="email">E-mail</label>
-                                <label><input type="radio" name="contact-method" value="phone">Phone</label>
-                            </div>
+                            </fieldset>
+                            <fieldset id="message">
                             <div>Which services do you have questions about?</div>
                             <div class="checkboxes">
-                                <label>Medicare<input type="checkbox" name="medicare" value="yes"></label>
-                                <label>Tax Preparation<input type="checkbox" name="tax-prep" value="yes"></label>
-                                <label>Financial Planning<input type="checkbox" name="financial-planning" value="yes"></label>
+                                <label><input type="checkbox" name="medicare" value="yes">Medicare</label>
+                                <label><input type="checkbox" name="tax-prep" value="yes">Tax Preparation</label>
+                                <label><input type="checkbox" name="financial-planning" value="yes">Financial Planning</label>
                             </div>
                             <label>What do you want to talk about?*<textarea name="questions" required></textarea></label>
                             <input type="submit" value="SEND MESSAGE">
@@ -93,7 +102,7 @@
     </main>
     <footer>
         <div id="social-media-icons">
-            <a href="https://wwww.facebook.com"><img src="images/social-media/facebook.svg" alt="facebook icon"></a>
+            <a href="https://www.facebook.com"><img src="images/social-media/facebook.svg" alt="facebook icon"></a>
             <a href="https://maps.app.goo.gl/jAUucfze4DFzZT5A9"><img src="images/social-media/google-plus.svg" alt="google-plus icon"></a>
             <a href="https://www.linkedin.com"><img src="images/social-media/linkedin-logo.svg" alt="linked-in icon"></a>
             <a href="https://www.youtube.com"><img src="images/social-media/youtube.svg" alt="youtube icon"></a>

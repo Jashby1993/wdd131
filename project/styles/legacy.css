@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&family=Baskervville+SC&family=Cinzel+Decorative:wght@400;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&family=Baskervville+SC&family=Cinzel+Decorative:wght@400;700&family=Gothic+A1&family=Quintessential&display=swap');
 @keyframes slideInLeft {
     from {
         transform: translateX(-100%);
@@ -31,7 +30,7 @@
     --relief:#F0F6FA;
     --primary:#B4BABF;
     --branding:"Cinzel Decorative";
-    --headers:"Quintessential", Georgia, "Times New Roman";
+    --headers:"Baskervville SC", Georgia, "Times New Roman";
     --paragraph:"Gothic A1", "Arial";
 }
 body{
@@ -217,7 +216,7 @@ main{
     left: 50%;
     transform: translateX(-50%);
     background-color: var(--accent-transparent);
-    color: var;
+    color: var(--text-color);
     padding: 10px;
     border-radius: 5px;
 }
@@ -409,6 +408,8 @@ legend{
 fieldset{
     display:flex;
     flex-direction: column;
+    padding:.8em 0;
+    border:none;
 }
 #exit-form{
     padding: .1em .1em;
@@ -419,9 +420,13 @@ fieldset{
 label{
     display:flex;
     flex-direction: column;
+    padding:.1em 1em;
 }
-#checkboxes label{
+.checkboxes label{
     flex-direction: row;
+}
+form div{
+    padding: .5em 1em;
 }
 #radio{
     display:flex;
@@ -508,4 +513,10 @@ label{
 .emphasis{
     font-weight: bolder;
     font-size: 1em;
+}
+
+.partnerBio img{
+    border-radius:50%;
+    width:60%;
+    max-width:500px;
 }
