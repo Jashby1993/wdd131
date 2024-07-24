@@ -27,8 +27,8 @@
     --accent: #4398C7;
     --accent-darker:#173A4F;
     --call-to-action:rgb(226, 157, 60);/*needs to be rgb*/
-    --relief:#F0F6FA;
-    --primary:#B4BABF;
+    --relief:#d8eefc;
+    --primary:#33373B;
     --branding:"Cinzel Decorative";
     --headers:"Baskervville SC", Georgia, "Times New Roman";
     --paragraph:"Gothic A1", "Arial";
@@ -453,19 +453,23 @@ form div{
 }
 
 #bubble1, #bubble3{
-    background-color: var(--primary);
+    background-color: var(--accent-darker);
     float: left;
     padding: 0.2em;
     margin: 0 .5em 0 0;
     animation: none;
+    border: 2px solid var(--call-to-action);
+    color: var(--relief);
    
 }
 #bubble2{
     float:right;
     padding: 0.2em;
     margin: 0 0 0 0.5em;
-    background-color: var(--primary);
+    background-color: var(--accent-darker);
     animation: none;
+    border: 2px solid var(--call-to-action);
+    color: var(--relief);
     
 }
 
@@ -548,13 +552,19 @@ form div{
     left: 10px; /* Adjust positioning */
     top: 50%;
     transform: translateY(-50%); /* Center vertically */
-    border: 3px solid #fff; /* Optional: add a border around the image */
+    border: 10px solid var(--call-to-action); /* Optional: add a border around the image */
 }
 
 /* Container for text content */
 .partnerBio .bio-text {
     margin-left: 120px; /* Adjust to leave space for the image */
     flex: 1;
+    background-color: var(--accent-darker);
+    padding-left: .75em;
+    border-radius: 5px;
+    border:3px solid var(--call-to-action);
+    color: var(--relief);
+    
 }
 
 /* Style for name */
@@ -571,7 +581,7 @@ form div{
 /* Style for product */
 .bio-market {
     font-style: italic;
-    color: #555; /* Adjust color as needed */
+    
 }
 
 #testimonial-grid{
@@ -580,9 +590,10 @@ form div{
 }
 #testimonial-grid .testimonial-card{
     margin:.75em;
-    background-color: var(--accent-transparent);
-    border:3px solid var(--accent-darker);
+    background-color: var(--accent-darker);
+    border:3px solid var(--accent);
     border-radius: 5px;
+    color:var(--relief)
 }
 
 #mission{
