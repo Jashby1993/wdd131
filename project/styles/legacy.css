@@ -27,7 +27,8 @@
     --accent: #4398C7;
     --accent-darker:#173A4F;
     --call-to-action:rgb(226, 157, 60);/*needs to be rgb*/
-    --relief:#d8eefc;
+    --relief:#e3f0f8;
+    --offwhite:#fefff7;
     --primary:#33373B;
     --branding:"Cinzel Decorative";
     --headers:"Baskervville SC", Georgia, "Times New Roman";
@@ -37,6 +38,7 @@ body{
     max-width:100vw;
     margin:0;
     padding:0;
+    background-color: var(--relief);
 
 }
 header{
@@ -246,7 +248,7 @@ button.next {
 
 .super-content{
     margin:1em;
-    padding:1em auto;
+    padding:1em 5vw;
 }
 .super-content h2{
     text-align: center;
@@ -358,6 +360,7 @@ footer{
     flex-direction: row;
     justify-content: space-around;
     align-content:center;
+    margin-top:1em;
 }
 #social-media-icons{
     display:grid;
@@ -457,7 +460,7 @@ form div{
     float: left;
     padding: 0.2em;
     margin: 0 .5em 0 0;
-    animation: none;
+    animation: slideInLeft 0.6s forwards;
     border: 2px solid var(--call-to-action);
     color: var(--relief);
    
@@ -467,17 +470,17 @@ form div{
     padding: 0.2em;
     margin: 0 0 0 0.5em;
     background-color: var(--accent-darker);
-    animation: none;
+    animation: slideInLeft 0.6s forwards;
     border: 2px solid var(--call-to-action);
     color: var(--relief);
     
 }
 
-.bubble1.animate, .bubble3.animate {
+#bubble1.animate, #bubble3.animate {
     animation: slideInLeft 0.6s forwards;
 }
 
-.bubble2.animate {
+#bubble2.animate {
     animation: slideInRight 0.6s forwards;
 }
 
@@ -599,4 +602,26 @@ form div{
 #mission{
     padding:0 .75em;
     margin: .2em .5em;
+}
+.office-info{
+    max-width: 85vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--offwhite);
+    margin: 1em auto 1em auto;
+    padding: 1em 0;
+    border-radius: 5em;
+}
+iframe{
+    border-radius:1em;
+}
+#contact-header{
+    text-align:center;
+}
+.disclaimer{
+    text-align:center;
+    border-top:2px solid var(--call-to-action);
 }

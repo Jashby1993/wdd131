@@ -35,62 +35,95 @@
   
     </header>
     <main>
-        <h2>Proudly Serving our Local North Colorado Residents!</h2>
+        <h2 id="contact-header">Proudly Serving our Local North Colorado Residents!</h2>
+        <picture>
+            <source srcset="images/hero/inside-office-landscapeLarge.webp" media="(min-width: 721px)" alt="Inside the Legacy Office" loading="lazy">
+            <source srcset="images/hero/inside-office-landscapeSmall.webp" media="(min-width: 501px)" alt="Inside the Legacy Office" loading="lazy">
+            <img src="images/hero/inside-office-portrait.webp" alt="Inside the Legacy Office" loading="lazy">
+        </picture>
         <div class = "office-info">
+
             <div id="map-widget">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3031.568026396087!2d-105.08462702451001!3d40.55113184744907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87694ba1282738e1%3A0x2978f1eeb92b018c!2s2627%20Redwing%20Rd%20%23320%2C%20Fort%20Collins%2C%20CO%2080525!5e0!3m2!1sen!2sus!4v1721670958484!5m2!1sen!2sus" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div id="hours-of-operation">
                 <h3>Hours of Operation</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Weekday</th>
+                            <th>Hours</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Monday</td>
+                            <td>9-6</td>
+                        </tr>
+                        <tr>
+                            <td>Tuesday</td>
+                            <td>8-5</td>
+                        </tr>
+                        <tr>
+                            <td>Wednesday</td>
+                            <td>9-6</td>
+                        </tr>
+                        <tr>
+                            <td>Thursday</td>
+                            <td>8-5</td>
+                        </tr>
+                        <tr>
+                            <td>Friday</td>
+                            <td>9-4</td>
+                        </tr>
+                        <tr>
+                            <td>Saturday</td>
+                            <td>By Appointment</td>
+                        </tr>
+                        <tr>
+                            <td>Sunday</td>
+                            <td>CLOSED</td>
+                        </tr>
+                    </tbody>
+                </table>
                 
             </div>
         </div>
         <div class="appointment-widget">
+            <h3>Reserve Your Time Today!</h3>
+            <p>Ready to start building your Legacy? Easily set an appointment with one of our partners. From "What can you do for me?" to "What do I need?" to "Why didn't I do this sooner?", it all starts with that first conversation. Don't wait!</p>
             <!-- Calendly inline widget begin -->
 <div class="calendly-inline-widget" data-url="https://calendly.com/jashby93school/30min?background_color=f0f6fa&text_color=0b1a22&primary_color=4398c7" style="min-width:320px;height:700px;"></div>
 <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 <!-- Calendly inline widget end -->
         </div>
-        <div class="contact-form">
-            <form id="contact-form" method="get" action="form-submission.html" class="information-request">
-                <fieldset>
-                    <legend>Request for Information</legend>
-                    <fieldset id="client-name">
-                    <label>First Name*<input type="text" name="fname" id="customer-name" required autocomplete="given-name"></label>
-                    <label>Last Name*<input type="text" name="lname" id="customer-name" required autocomplete="family-name"></label>
-                    
-                    <legend>Preferred Contact Method</legend>
-                    <div id="radio">
-                        <label><input type="radio" name="preferred-communication" value="email" id="email">E-mail</label>
-                        <label><input type="radio" name="preferred-communication" value="phone" id="phone">Phone</label>
-                    </div>
-                    <label>Phone Number<input type="tel" name="phone-number" autocomplete="tel"></label>
-                    <label>E-mail*<input type="email" name="email" required autocomplete="email"></label>
-                    </fieldset>
-                    <fieldset id="message">
-                    <div>Which services do you have questions about?</div>
-                    <div class="checkboxes">
-                        <label><input type="checkbox" name="medicare" value="yes">Medicare</label>
-                        <label><input type="checkbox" name="tax-prep" value="yes">Tax Preparation</label>
-                        <label><input type="checkbox" name="financial-planning" value="yes">Financial Planning</label>
-                    </div>
-                    <label>What do you want to talk about?*<textarea name="questions" required></textarea></label>
-                    <input type="submit" value="SEND MESSAGE">
-                </fieldset>
-            </form>
-        </div>
+        
     </main>
     <footer>
-        <div class="social-media-icons">
-
+        <div id="social-media-icons">
+            <a href="https://www.facebook.com"><img src="images/social-media/facebook.svg" alt="facebook icon"></a>
+            <a href="https://maps.app.goo.gl/jAUucfze4DFzZT5A9"><img src="images/social-media/google-plus.svg" alt="google-plus icon"></a>
+            <a href="https://www.linkedin.com"><img src="images/social-media/linkedin-logo.svg" alt="linked-in icon"></a>
+            <a href="https://www.youtube.com"><img src="images/social-media/youtube.svg" alt="youtube icon"></a>
         </div>
         <div class="footer-logo">
-
+            <img src="images/legacy-logo.webp" alt="legacy logo, stylized L holding 3 keys">
+            <h1  id="footer-heading">Legacy</h1>
         </div>
         <div class="footer-links">
-            
+            <nav id="footer-menu">
+                
+                <a href="index.html">HOME</a>
+                <a href="about-us.html">WHO WE ARE</a>
+                <a href="contact-info.html">CONTACT US</a>
+                <a href="citations.html" >CITATIONS</a>
+            </nav>
         </div>
+
     </footer>
+    <div class="disclaimer">
+        <p>We do not offer every plan available in your area. Currently we represent 7 organizations which offer 58 products in your area. Please contact Medicare.gov, 1-800-MEDICARE, or your local State Health Insurance Program to get information on all of your options.</p>
+    </div>
     
 </body>
 </html>

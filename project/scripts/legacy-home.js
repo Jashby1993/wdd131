@@ -180,6 +180,13 @@ const partners=[
         product:"Financial Planning",
         image:'images/larry-profile.webp',
         bio:'Larry has been dedicated to financial planning for decades, specializing in annuities. He co-founded Legacy in 2002 with the vision of meeting the unique needs of a specific market. Larry’s commitment to treating each client as family has fostered lasting relationships of trust and success.'
+    },
+    {
+        fname:"Justin",
+        lname:"Ashby",
+        product:"IT",
+        image:'images/justin-profile.webp',
+        bio:`With years of experience in the insurance industry, Justin is now moving into the web design and software development industry. Just takes care of Legacy software and cyber security, just one more way we look out for our clients!`
     }
 ];
 
@@ -415,27 +422,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    window.addEventListener('scroll', () => {
-        const scrollTop = window.scrollY || document.documentElement.scrollTop;
-        const footerOffsetTop = footer ? footer.offsetTop : document.body.scrollHeight;
-        const headerHeight = header ? header.offsetHeight : 0;
-
-        if (scrollTop > lastScrollTop) {
-            header.classList.add('header-mini');
-            if (scrollTop + headerHeight >= footerOffsetTop) {
-                header.classList.remove('sticky-header');
-                header.classList.add('hidden-header');
-            } else {
-                header.classList.add('sticky-header');
-                header.classList.remove('hidden-header');
-            }
-        } else {
-            header.classList.remove('sticky-header');
-            header.classList.remove('hidden-header');
-        }
-
-        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
-    });
 
     function toggleFormButtonVisibility() {
         const scrollY = window.scrollY;
@@ -444,8 +430,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (scrollY > heroHeight && scrollY < footerTop - contactRequestButtonHeight) {
             contactRequestButton.classList.add('show');
+            contactRequestButton.classList.remove('hidden');
         } else {
             contactRequestButton.classList.remove('show');
+            contactRequestButton.classList.add('hidden');
         }
     }
 

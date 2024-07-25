@@ -180,6 +180,13 @@ const testimonials = [
         product: "Medicare",
         image: 'images/adam-profile.webp',
         bio: `"Adam has been offering insurance and financial advice since 2008, with a strong focus on the Public Education market. Since joining Legacy, Adam has channeled his passion for service into helping clients with Medicare, particularly Medicare Supplements. He is excited to contribute his expertise to a new organization that shares his commitment to service.`
+    },
+    {
+        fname:"Justin",
+        lname:"Ashby",
+        product:"IT",
+        image:'images/justin-profile.webp',
+        bio:`With years of experience in the insurance industry, Justin is now moving into the web design and software development industry. Just takes care of Legacy software and cyber security, just one more way we look out for our clients!`
     }
 ];
 
